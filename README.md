@@ -4,6 +4,10 @@
 
 **Varun Agarwal**
 
+**Samyak Jain** 
+
+**Anish Sinha**
+
 **Aayush Pachchigar**
 #
 **Track 1 — Software (Agentic AI)** · Future Tech Summit ’26 · AIRC, Woxsen University  
