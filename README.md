@@ -2,9 +2,9 @@
 
 # **Team** 
 
-**Varun agarwal**
+**Varun Agarwal**
 
-**Aayush pachchigar**
+**Aayush Pachchigar**
 #
 **Track 1 — Software (Agentic AI)** · Future Tech Summit ’26 · AIRC, Woxsen University  
 **No Bug Goes Unproven:** Every finding ships with its evidence tier (L1–L3), a 3× deterministic Proof-of-Vulnerability (PoV), and a patch verified by four deterministic gates — plus Adaption-ready DPO preference pairs.
