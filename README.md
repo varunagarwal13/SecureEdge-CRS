@@ -45,7 +45,16 @@ make fuzz
 
 
 ## Phase 2 Onsite Roadmap (Dec 8–9, 2026)
+## Phase 2 Onsite Roadmap (Dec 8–9, 2026 · Woxsen University)
 
-- Dual-ISA worker dispatch (Docker `x86_64` + Arduino UNO Q `ARM64` with external INA219 power + Linux `thermal_zone` telemetry)
-- Warm-start LinUCB scheduler routing by unique PoVs/Wh (`<= 78 °C`)
-- Live Adaption Labs API integration for seed synthesis, ReAct patching, and continual-learning DPO updates
+Phase 1 proves the deterministic verification core (`make demo` — AST guard, CRC seed unlock, 3× ASan PoV, 4-gate repair, SHA-256 audit chain, and DPO export). For the Phase 2 live onsite build and jury demo, we extend this vertical slice into the full 3-tier system:
+
+* **Live Multi-Agent Control Plane (Track 1 Core):** FastAPI orchestrator + LangGraph 3-agent loop (*Triage*, *12 s Stagnation Seed Breaker*, and *ReAct Patcher*) with 6 s worker leases and resumable campaign state.
+* **Adaption Labs Continual-Learning Loop (Dual-Mode):** Feed 4-gate-verified `(chosen, rejected)` pairs from `outputs/dpo_preference_pairs.jsonl` into **Adaption** (`adaptionlabs.ai` / AutoScientist DPO loop) to iteratively improve first-pass 4-gate repair accuracy and reduce overfit deletions — with local `Qwen2.5-Coder` (`--network=none`) as the air-gapped offline fallback.
+* **Heterogeneous Dual-ISA Workers & Telemetry:** Parallel fuzzing across `x86_64` Docker (`AFL++`/`libFuzzer`) and **Arduino UNO Q (`ARM64` ABI target)** with live `INA219` power + Linux `thermal_zone` 2 s heartbeats, LED matrix PoV alerts, cross-ISA DWARF deduplication, and warm-start **LinUCB** scheduling (`Δcoverage / Wh`, hard thermal cap `≤ 78 °C`).
+* **3-Target Live Jury Demo (45 s Loop):**
+  1. Dead-code Semgrep alert held at `L1` (zero false alarm)
+  2. `edge_mqtt_parser.c` 12 s coverage stall broken by LLM-synthesized `AGX2` + CRC seed → `CWE-190 → CWE-787` PoV flashed on UNO Q
+  3. ARM64-only `unsigned char` ABI bug caught exclusively on `aarch64`
+  4. Overfit deletion patch blocked by Gate 3 (AST guard + 10 tests) → valid patch passes `4/4` gates, stages human-reviewed PR, and logs a new Adaption DPO pair
+* **Live Next.js Telemetry & Dossier UI:** Real-time coverage curve, UNO Q °C/W/RSS gauges, 4-gate status badges, and verifiable SHA-256 patch dossier.
