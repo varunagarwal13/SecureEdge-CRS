@@ -1,5 +1,11 @@
 # SecureEdge-CRS — AgenticX 2.0 (Phase 1 Working PoC)
 
+# **Team** 
+
+**Varun agarwal**
+
+**Aayush pachchigar**
+#
 **Track 1 — Software (Agentic AI)** · Future Tech Summit ’26 · AIRC, Woxsen University  
 **No Bug Goes Unproven:** Every finding ships with its evidence tier (L1–L3), a 3× deterministic Proof-of-Vulnerability (PoV), and a patch verified by four deterministic gates — plus Adaption-ready DPO preference pairs.
 
@@ -29,6 +35,10 @@ Optional native LLVM libFuzzer run (when `clang` is installed):
 ```bash
 make fuzz
 ```
+## Verification Output
+
+<img width="1917" height="940" alt="DEMO" src="https://github.com/user-attachments/assets/8b32fdad-a761-4d82-b985-7091a9e8ba92" />
+
 
 ## Phase 2 Onsite Roadmap (Dec 8–9, 2026)
 
