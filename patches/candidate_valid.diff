@@ -1,0 +1,19 @@
+--- a/targets/edge_mqtt_parser.c
++++ b/targets/edge_mqtt_parser.c
+@@ -47,13 +47,16 @@
+-    uint8_t alloc_size = (uint8_t)(payload_len + 16);
++    if (payload_len > AGX2_MAX_PAYLOAD) {
++        return -7;
++    }
++    size_t alloc_size = (size_t)payload_len + 16;
+     uint8_t *scratch = (uint8_t *)malloc(alloc_size);
+     if (!scratch) {
+         return -6;
+     }
+ 
+     memcpy(scratch, data + 8 + topic_len, payload_len);
+ 
+-    size_t copy_out = payload_len < AGX2_MAX_PAYLOAD ? payload_len : AGX2_MAX_PAYLOAD;
++    size_t copy_out = (size_t)payload_len;
+     memcpy(out->payload, scratch, copy_out);
+     out->actual_len = (uint16_t)copy_out;
