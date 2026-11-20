@@ -1,5 +1,7 @@
 # SecureEdge-CRS — AgenticX 2.0 (Phase 1 Working PoC)
 
+SecureEdge-CRS is an autonomous AI system that finds memory bugs in edge/IoT firmware, proves they are real by triggering them, and generates verified patches without breaking existing code.
+
 # **Team** 
 
 **Varun Agarwal**
@@ -44,7 +46,7 @@ make fuzz
 <img width="1917" height="940" alt="DEMO" src="https://github.com/user-attachments/assets/8b32fdad-a761-4d82-b985-7091a9e8ba92" />
 
 
-## Phase 2 Onsite Roadmap (Dec 8–9, 2026)
+
 ## Phase 2 Onsite Roadmap (Dec 8–9, 2026 · Woxsen University)
 
 Phase 1 proves the deterministic verification core (`make demo` — AST guard, CRC seed unlock, 3× ASan PoV, 4-gate repair, SHA-256 audit chain, and DPO export). For the Phase 2 live onsite build and jury demo, we extend this vertical slice into the full 3-tier system:
