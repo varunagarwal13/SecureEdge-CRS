@@ -45,6 +45,10 @@ make fuzz
 
 <img width="1917" height="940" alt="DEMO" src="https://github.com/user-attachments/assets/8b32fdad-a761-4d82-b985-7091a9e8ba92" />
 
+### Live Terminal Walkthrough (15s)
+
+<img width="800" height="402" alt="final" src="https://github.com/user-attachments/assets/63825013-92a1-41a6-b9a8-75b35afdf1b3" />
+
 
 
 ## Phase 2 Onsite Roadmap (Dec 8–9, 2026 · Woxsen University)
